@@ -1,2 +1,2 @@
 # GottaClimbFast
-Climb and descend any kind of ladder with ease! Configurable speeds!
+Climb and descend any kind of claimable block with ease! Now with configurable speeds!
