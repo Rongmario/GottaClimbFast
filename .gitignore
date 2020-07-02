@@ -14,3 +14,5 @@ build/
 .idea/
 
 run/
+
+.gradle/4.10.3/

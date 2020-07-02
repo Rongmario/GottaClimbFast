@@ -1,8 +1,0 @@
-{
-  "required": true,
-  "package": "xyz.rongmario.gottaclimbfast.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [
-    "MixinLivingEntity"
-  ]
-}
