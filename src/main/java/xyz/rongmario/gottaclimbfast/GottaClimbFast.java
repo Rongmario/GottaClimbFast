@@ -2,7 +2,7 @@ package xyz.rongmario.gottaclimbfast;
 
 import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -41,10 +41,10 @@ public class GottaClimbFast {
             return;
         }
         if (player.rotationPitch > 0 && player.moveForward == 0) {
-            player.move(MoverType.PLAYER, new Vec3d(0, absolute(player.rotationPitch / 90.0) * (GottaClimbFast.config.getDescendFactor() / 20) * -1.0D, 0));
+            player.move(MoverType.PLAYER, new Vector3d(0, absolute(player.rotationPitch / 90.0) * (GottaClimbFast.config.getDescendFactor() / 20) * -1.0D, 0));
         }
         else if (player.rotationPitch < 0 && !GottaClimbFast.config.isForwardRequired() || player.moveForward > 0) {
-            player.move(MoverType.PLAYER, new Vec3d(0, absolute(player.rotationPitch / 90.0) * (GottaClimbFast.config.getAscendFactor() / 20), 0));
+            player.move(MoverType.PLAYER, new Vector3d(0, absolute(player.rotationPitch / 90.0) * (GottaClimbFast.config.getAscendFactor() / 20), 0));
         }
     }
 
