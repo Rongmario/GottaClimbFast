@@ -1,9 +1,10 @@
 modLoader="javafml"
 loaderVersion="[32,)"
 issueTrackerURL="https://github.com/Rongmario/GottaClimbFast/issues"
+license="MIT"
 [[mods]]
 modId="gottaclimbfast"
-version="1.0"
+version="1.1"
 displayName="Gotta Climb Fast!"
 displayURL="https://github.com/Rongmario/GottaClimbFast"
 logoFile="icon.png"
