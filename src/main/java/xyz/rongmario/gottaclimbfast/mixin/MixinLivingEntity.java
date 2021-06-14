@@ -17,11 +17,11 @@ public abstract class MixinLivingEntity {
             entity.move(type, original);
         }
         else {
-            if (entity.pitch > 0 && entity.forwardSpeed == 0) {
-                entity.move(type, new Vec3d(original.x, absolute(entity.pitch / 90.0) * (GottaClimbFast.config.getDescendFactor() / 10) * -1.0D, original.z));
+            if (entity.getPitch() > 0 && entity.forwardSpeed == 0) {
+                entity.move(type, new Vec3d(original.x, absolute(entity.getPitch() / 90.0) * (GottaClimbFast.config.getDescendFactor() / 10) * -1.0D, original.z));
             }
-            else if (entity.pitch < 0 && !GottaClimbFast.config.isForwardRequired() || entity.forwardSpeed > 0) {
-                entity.move(type, new Vec3d(original.x, absolute(entity.pitch / 90.0) * (GottaClimbFast.config.getAscendFactor() / 10), original.z));
+            else if (entity.getPitch() < 0 && !GottaClimbFast.config.isForwardRequired() || entity.forwardSpeed > 0) {
+                entity.move(type, new Vec3d(original.x, absolute(entity.getPitch() / 90.0) * (GottaClimbFast.config.getAscendFactor() / 10), original.z));
             }
             else {
                 entity.move(type, original);
