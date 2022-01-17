@@ -26,13 +26,10 @@
   "mixins": [
     "mixins.gottaclimbfast.json"
   ],
-
   "depends": {
-    "fabricloader": ">=0.8.2",
-    "fabric": ">=0.12.0",
-    "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=16"
   }
 }
