@@ -11,7 +11,7 @@ import xyz.rongmario.gottaclimbfast.GottaClimbFast;
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity {
 
-    @Redirect(method = "method_26318", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;move(Lnet/minecraft/entity/MovementType;Lnet/minecraft/util/math/Vec3d;)V"))
+    @Redirect(method = "applyMovementInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;move(Lnet/minecraft/entity/MovementType;Lnet/minecraft/util/math/Vec3d;)V"))
     private void redirectMove(LivingEntity entity, MovementType type, Vec3d original) {
         if (!entity.isClimbing() || entity.isSneaking()) {
             entity.move(type, original);
