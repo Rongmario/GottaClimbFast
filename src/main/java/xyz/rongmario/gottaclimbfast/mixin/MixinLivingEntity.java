@@ -11,17 +11,17 @@ import xyz.rongmario.gottaclimbfast.GottaClimbFast;
 @Mixin(LivingEntity.class)
 public abstract class MixinLivingEntity {
 
-    @Redirect(method = "method_26318", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;move(Lnet/minecraft/entity/MovementType;Lnet/minecraft/util/math/Vec3d;)V"))
+    @Redirect(method = "applyMovementInput", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;move(Lnet/minecraft/entity/MovementType;Lnet/minecraft/util/math/Vec3d;)V"))
     private void redirectMove(LivingEntity entity, MovementType type, Vec3d original) {
         if (!entity.isClimbing() || entity.isSneaking()) {
             entity.move(type, original);
         }
         else {
-            if (entity.pitch > 0 && entity.forwardSpeed == 0) {
-                entity.move(type, new Vec3d(original.x, absolute(entity.pitch / 90.0) * (GottaClimbFast.config.getDescendFactor() / 10) * -1.0D, original.z));
+            if (entity.getPitch() > 0 && entity.forwardSpeed == 0) {
+                entity.move(type, new Vec3d(original.x, absolute(entity.getPitch() / 90.0) * (GottaClimbFast.config.getDescendFactor() / 10) * -1.0D, original.z));
             }
-            else if (entity.pitch < 0 && !GottaClimbFast.config.isForwardRequired() || entity.forwardSpeed > 0) {
-                entity.move(type, new Vec3d(original.x, absolute(entity.pitch / 90.0) * (GottaClimbFast.config.getAscendFactor() / 10), original.z));
+            else if (entity.getPitch() < 0 && !GottaClimbFast.config.isForwardRequired() || entity.forwardSpeed > 0) {
+                entity.move(type, new Vec3d(original.x, absolute(entity.getPitch() / 90.0) * (GottaClimbFast.config.getAscendFactor() / 10), original.z));
             }
             else {
                 entity.move(type, original);

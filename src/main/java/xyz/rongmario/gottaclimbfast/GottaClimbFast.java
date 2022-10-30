@@ -25,7 +25,7 @@ public class GottaClimbFast implements ModInitializer {
     }
 
     protected static void prepareAndReadConfig() {
-        File file = new File(FabricLoader.getInstance().getConfigDirectory(), "gotta_climb_fast.json");
+        File file = new File(FabricLoader.getInstance().getConfigDirectory(), "gotta_climb_fast.json"); // Fuck your deprecation
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             config = GSON.fromJson(reader, Configuration.class);
