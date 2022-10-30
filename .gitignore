@@ -1,18 +1,7 @@
-
-.gradle/6.5/
-
-.gradle/checksums/
-
-.gradle/buildOutputCleanup/
-
-.gradle/loom-cache/
-
-.gradle/vcs-1/
+.gradle/
 
 build/
 
 .idea/
 
 run/
-
-.gradle/4.10.3/
